@@ -1,0 +1,9 @@
+- name: Ensure group "{{ group_name }}" exists
+  group:
+    name: "{{ group_name }}"
+    state: present
+
+- name: Add user "{{ user_name }}" to group "{{ group_name }}"
+  user: 
+    name: "{{ user_name }}"
+    group: "{{ group_name }}"
