@@ -1,12 +1,23 @@
 ---
-- hosts: localhost
+# all the playbooks start with three dashes
+
+
+# in order to have a valid playbook we must specify the actions to be performed, called tasks, and the target node/s on which the tasks will be executed. To specify the target nodes you must edit the hosts file in the ansible main directory by adding them to a group. The group identifier will be used to fill the value of "- hosts:", in our case localhost.
+ 
+- hosts: localhosti
   gather_facts: true
+
+# In this section are to be defined the actions that Ansible will perform on the target node. Similar to this are the pre_tasks, post_tasks and handlers. All of them contain tasks or special tasks.
+
   tasks:
   
+# tasks are formed by simple "bricks" called modules. What differentiates modules from each other are the parameters specified. Below "- name: ..." is the identifier of the tasks and the name which will appear in the command line interface when executing ansible code; "debug:" is a module, called debug which outputs a message in the cli; "msg:" is the parameter of the debug module which contains the text to be printed on the terminal.
+
     - name: Simple debug
       debug:
         msg: "Executing a task from the playbook"
 
+# In this section are to be defined the name of the roles to be executed within a playbook. It can be achieved also with the "include_role:" section.
   roles:
     - /etc/ansible/ansible-samples/roles/sample_role
 
