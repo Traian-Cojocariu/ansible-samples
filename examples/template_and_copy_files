@@ -1,0 +1,8 @@
+- name: Copy a file from "{{ src_path }}" to "{{ dest_path }}"
+    src: "{{ src_path }}"
+    dest: "{{ dest_path }}"
+
+- name: Create a configuration file using template module
+  template:
+    src: "{{ src_path }}"/"{{ file_name }}".conf.j2
+    dest: "{{ dest_path }}"/"{{ file_name }}".conf
