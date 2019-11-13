@@ -6,3 +6,4 @@ This repository is being developed and tested on a CentOS Linux release 7.7.1908
 
 - Inside examples dir there are YAML files which contain specific tasks. These files cannot be simply launched with the "ansible-playbook   test.yml" command.
 
+

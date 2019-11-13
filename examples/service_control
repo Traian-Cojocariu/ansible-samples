@@ -1,0 +1,9 @@
+- name: Enable service on boot
+  service:
+    name: "{{ service_name }}"
+    enabled: yes
+
+- name: Starts service
+  service:
+    name: "{{ service_name }}"
+    state: started #other opts: reloaded, restarted, stopped

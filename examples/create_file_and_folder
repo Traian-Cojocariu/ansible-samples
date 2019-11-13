@@ -1,0 +1,22 @@
+- name: create a directory inside "{{ desired_path }}"
+  file:
+    path: "{{ desired_path }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ group_name }}"
+    mode: 0644
+    recurse: true # mkdir -p
+    force: yes
+
+- name: create a file inside "{{ desired_path }}"
+  file:
+    path: "{{ desired_path }}"
+    state: touch
+    mode: 0644
+
+- name: change file ownership, group and user
+  file:
+    path: "{{ desired_path }}"/"{{ file_name }}"
+    owner: "{{ user_name }}"
+    group: "{{ group_name }}"
+    mode: 0755
