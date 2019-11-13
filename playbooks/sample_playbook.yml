@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  gather_facts: true
+  tasks:
+  
+    - name: Simple debug
+      debug:
+        msg: "Executing a task from the playbook"
+
+  roles:
+    - /etc/ansible/ansible-samples/roles/sample_role
+
+# Note that the path of the role is the one where the role is actually saved. The path in where ansible searches roles can be modified by editing the ansible.cfg file.

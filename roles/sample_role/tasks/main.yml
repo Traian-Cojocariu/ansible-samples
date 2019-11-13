@@ -1,0 +1,7 @@
+---
+# tasks file for sample_role
+# the value of debug_msg variable is stored in the defaults folder
+
+- name: Simple debug task
+  debug:
+    msg: "{{ debug_msg }}" 
