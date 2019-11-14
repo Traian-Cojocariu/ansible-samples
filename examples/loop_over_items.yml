@@ -1,0 +1,11 @@
+# yum_repositories is defined in another file, usually inside role/defaults/main.yml
+- name: Create the repositories
+  yum_repository:
+    name: "{{ item.name }}"
+    description: "{{ item.reponame }} repository"
+    baseurl: "{{ item.http_url }}"
+    gpgcheck: "{{ item.gpgcheck }}"
+    enabled: "{{ item.enabled }}"
+    gpgkey: "{{ item.gpg_key_file }}"
+    priority: "{{ item.priority }}"
+  with_items: "{{ yum_repositories }}"
