@@ -4,7 +4,7 @@
 
 # in order to have a valid playbook we must specify the actions to be performed, called tasks, and the target node/s on which the tasks will be executed. To specify the target nodes you must edit the hosts file in the ansible main directory by adding them to a group. The group identifier will be used to fill the value of "- hosts:", in our case localhost.
  
-- hosts: localhosti
+- hosts: localhost
   gather_facts: true
 
 # In this section are to be defined the actions that Ansible will perform on the target node. Similar to this are the pre_tasks, post_tasks and handlers. All of them contain tasks or special tasks.
