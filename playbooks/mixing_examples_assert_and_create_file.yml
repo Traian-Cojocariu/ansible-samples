@@ -1,0 +1,36 @@
+---
+- hosts: localhost
+
+  vars:
+    - key: value
+    - desired_path: /etc/ansible/tmp
+
+# This is a section which will be executed before the tasks section.
+# There is also a section called post_tasks which is executed
+# after any section, but before the handlers.
+  pre_tasks:
+  
+    - name: Ensure that the target system is CentOS
+      assert:
+        that:
+          - ansible_os_family == 'CentOS'
+       msg: "Only on CentOS"
+  
+  tasks:
+  
+    - name: Create a file inside "{{ desired_path }}"
+      file:
+        path: "{{ desired_path }}"
+        state: touch
+        mode: 0755
+      notify: successful_message
+      
+  # Special tasks triggered with the notify action and executed in case of changed state.
+  # These tasks are executed at the end of the play.
+  handlers:
+    
+    - name: successful_message
+      debug:
+        msg: "The file has been created"
+  
+  

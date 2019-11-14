@@ -1,0 +1,31 @@
+---
+# This is not a working playbook (ready to be executed).
+# The purpose is to define better the concepts of play/s and playbook.
+# A playbook is formed by a play or a group of plays. 
+# A play is formed by a group of sections (pre_tasks, tasks, post_task etc)
+# containing tasks (actions) to be executed on a list of hosts.
+
+### FIRST PLAY
+- hosts: backend
+  gather_facts: true
+  
+  pre_tasks:
+  
+  tasks:
+  
+  roles:
+  
+  post_tasks:
+  
+  handlers:
+
+
+### SECOND PLAY
+- hosts: frontend
+  gather_facts: false
+  become: true
+  
+  tasks:
+  
+  handlers:
+...  

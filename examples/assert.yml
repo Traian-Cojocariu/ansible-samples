@@ -1,0 +1,6 @@
+- name: Ensure that the target system is RedHat 7.7
+  assert:
+    that:
+      - ansible_os_family == 'RedHat'
+      - ansible_distribution_version == '7.7'
+    msg: "Only on RHEL 7.6"

@@ -1,0 +1,7 @@
+- name: Execute multiple commands 
+  shell: |
+    echo "command 1"
+    echo "command 2"
+
+- name: Run a bash script
+  command: "{{ desired_path }}"/"{{ file_name }}".sh

@@ -1,0 +1,25 @@
+---
+# This playbook deploys the whole application stack by using roles.
+# It is just a template, will not work if launched as a playbook.
+# To launch it you need to define hosts file and create the roles.
+
+### FIRST PLAY
+- name: Common configurations 
+  hosts: all_servers
+  
+  roles:
+    - apply_common_configurations
+
+### SECOND PLAY
+- name: Configure the webservers
+  hosts: web_servers
+  
+  roles:
+    - deploy_web_servers
+    
+### THIRD PLAY
+- name: Configure the databases
+  hosts: db_servers
+
+  roles:
+    - deploy_db_servers

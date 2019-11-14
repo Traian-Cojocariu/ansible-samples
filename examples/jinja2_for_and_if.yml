@@ -1,0 +1,8 @@
+# for cycle inside an if-else construct
+# role_vars is defined inside another file, not in the template file
+
+{% if role_vars is defined %}
+{% for role_var in role_vars %}
+        {{ role_var }}
+{% endfor %}
+{% endif %}
