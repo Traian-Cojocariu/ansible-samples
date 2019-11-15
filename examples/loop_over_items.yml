@@ -9,3 +9,11 @@
     gpgkey: "{{ item.gpg_key_file }}"
     priority: "{{ item.priority }}"
   with_items: "{{ yum_repositories }}"
+  
+- name: ensure a list of packages installed
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - httpd
+    - httpd-tools
